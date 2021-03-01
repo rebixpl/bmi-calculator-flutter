@@ -88,7 +88,7 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Text(
                     "HEIGHT",
-                    style: k,
+                    style: kLabelTextStyle,
                   ),
                 ],
               ),
