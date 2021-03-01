@@ -1,9 +1,10 @@
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/bottom_button.dart';
+import 'package:bmi_calculator/calculator_brain.dart';
+import 'package:bmi_calculator/componenets/bottom_button.dart';
+import 'package:bmi_calculator/componenets/icon_content.dart';
+import 'package:bmi_calculator/componenets/reusable_card.dart';
+import 'package:bmi_calculator/componenets/round_icon_button.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/icon_content.dart';
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/screens/results.dart';
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/reusable_card.dart';
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/round_icon_button.dart';
+import 'package:bmi_calculator/screens/results.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -253,11 +254,20 @@ class _InputPageState extends State<InputPage> {
           ),
           BottomButton(
             onTap: () {
+              CalculatorBrain calc = CalculatorBrain(
+                height: height,
+                weight: weight,
+              );
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return ResultsPage();
+                    return ResultsPage(
+                      bmiResult: calc.calculateBMI(),
+                      resultsText: calc.getResult(),
+                      interpretation: calc.getInterpretation(),
+                    );
                   },
                 ),
               );

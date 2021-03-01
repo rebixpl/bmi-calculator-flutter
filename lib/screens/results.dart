@@ -1,8 +1,19 @@
-import 'package:bmi_calculator/constants.dart';
-import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/reusable_card.dart';
 import 'package:flutter/material.dart';
+import 'package:bmi_calculator/componenets/bottom_button.dart';
+import 'package:bmi_calculator/componenets/reusable_card.dart';
+import 'package:bmi_calculator/constants.dart';
 
 class ResultsPage extends StatelessWidget {
+  ResultsPage({
+    @required this.bmiResult,
+    @required this.interpretation,
+    @required this.resultsText,
+  });
+
+  final String bmiResult;
+  final String resultsText;
+  final String interpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +27,8 @@ class ResultsPage extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 "Your Result",
                 style: kTitleTextStyle,
@@ -31,21 +44,27 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Normal",
+                    resultsText.toUpperCase(),
                     style: kResultsTextStyle,
                   ),
                   Text(
-                    "18.3",
+                    bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    "Your BMI result is quite low, you should eat kebab.",
+                    interpretation,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   ),
                 ],
               ),
             ),
+          ),
+          BottomButton(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            buttonTitle: "RE-CALCULATE",
           ),
         ],
       ),
