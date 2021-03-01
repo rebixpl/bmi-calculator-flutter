@@ -1,7 +1,9 @@
+import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/bottom_button.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/icon_content.dart';
-import 'package:bmi_calculator/results.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/icon_content.dart';
+import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/screens/results.dart';
+import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/reusable_card.dart';
+import 'file:///C:/Programming/FLUTTER/AndroidStudioProjects/2021/bmi-calculator-flutter/lib/componenets/round_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -249,7 +251,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
+          BottomButton(
             onTap: () {
               Navigator.push(
                 context,
@@ -260,48 +262,9 @@ class _InputPageState extends State<InputPage> {
                 ),
               );
             },
-            child: Container(
-              color: kBottomContainerColor,
-              child: Center(
-                child: Text(
-                  "CALCULATE",
-                  style: kLargeButtonTextStyle,
-                ),
-              ),
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
-            ),
+            buttonTitle: "CALCULATE",
           ),
         ],
-      ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({
-    @required this.icon,
-    @required this.onTap,
-  });
-
-  final IconData icon;
-  final Function onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      shape: CircleBorder(),
-      child: Icon(
-        icon,
-        color: Colors.white,
-      ),
-      elevation: 0.0,
-      onPressed: onTap,
-      fillColor: Color(0xFF4C4F5E),
-      constraints: BoxConstraints.tightFor(
-        height: 56.0,
-        width: 56.0,
       ),
     );
   }

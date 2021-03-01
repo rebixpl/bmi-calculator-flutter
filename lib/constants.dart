@@ -16,6 +16,26 @@ const TextStyle kLargeButtonTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const TextStyle kTitleTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kResultsTextStyle = TextStyle(
+  fontSize: 22.0,
+  fontWeight: FontWeight.bold,
+  color: Color(0xFF24D876),
+);
+
+const TextStyle kBMITextStyle = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);
+
+const TextStyle kBodyTextStyle = TextStyle(
+  fontSize: 22.0,
+);
+
 // NUMBERS
 const double kBottomContainerHeight = 80.0;
 const double kHeightSliderMin = 120.0;
