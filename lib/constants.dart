@@ -11,6 +11,11 @@ const TextStyle kNumberTextStyle = TextStyle(
   fontWeight: FontWeight.w900,
 );
 
+const TextStyle kLargeButtonTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
+
 // NUMBERS
 const double kBottomContainerHeight = 80.0;
 const double kHeightSliderMin = 120.0;
